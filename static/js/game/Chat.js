@@ -15,7 +15,6 @@
  */
 function Chat(socket, displayElement, textElement) {
   this.socket = socket;
-
   this.displayElement = displayElement;
   this.textElement = textElement;
 }

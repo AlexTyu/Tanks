@@ -14,7 +14,7 @@ function Drawing(context) {
   this.context = context;
 };
 
-Drawing.NAME_FONT = '14px San Francisco';
+Drawing.NAME_FONT = '18px San Francisco';
 Drawing.NAME_COLOR = 'white';
 
 Drawing.HP_COLOR = 'green';

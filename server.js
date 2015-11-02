@@ -51,7 +51,7 @@ io.on('connection', function(socket) {
     game.addNewPlayer(data.name, socket);
     socket.emit('received-new-player');
     io.sockets.emit('chat-server-to-clients', {
-      name: '[Tank Anarchy]',
+      name: '[Tanks]',
       message: data.name + ' has joined the game.',
       isNotification: true
     });
@@ -75,7 +75,7 @@ io.on('connection', function(socket) {
   socket.on('disconnect', function() {
     var name = game.removePlayer(socket.id);
     io.sockets.emit('chat-server-to-clients', {
-      name: '[Tank Anarchy]',
+      name: '[Tanks]',
       message: name + ' has left the game.',
       isNotification: true
     });
