@@ -26,7 +26,6 @@ function Bullet(x, y, vx, vy, orientation, source) {
   this.orientation = orientation;
   this.source = source;
   this.damage = Bullet.DEFAULT_DAMAGE;
-
   this.distanceTraveled = 0;
   this.shouldExist = true;
 }

@@ -64,6 +64,9 @@ Chat.prototype.receiveMessage = function(name, message, isNotification) {
   }
   element.appendChild(document.createTextNode(name + ': ' + message));
   this.displayElement.appendChild(element);
+
+// require('./inheritable');
+// Message.inheritsFrom(Entity);
 };
 
 /**

@@ -14,8 +14,10 @@ function Drawing(context) {
   this.context = context;
 };
 
-Drawing.NAME_FONT = '18px San Francisco';
+Drawing.NAME_FONT = '16px San Francisco';
 Drawing.NAME_COLOR = 'white';
+Drawing.MESSAGE_FONT = '20px San Francisco';
+Drawing.MESSAGE_COLOR = 'gray';
 
 Drawing.HP_COLOR = 'green';
 Drawing.HP_MISSING_COLOR = 'red';
@@ -28,7 +30,7 @@ Drawing.OTHER_TURRET_SRC = Drawing.BASE_IMG_URL + 'other_turret.png';
 Drawing.SHIELD_SRC = Drawing.BASE_IMG_URL + 'shield.png';
 Drawing.BULLET_SRC = Drawing.BASE_IMG_URL + 'bullet.png';
 Drawing.TILE_SRC = Drawing.BASE_IMG_URL + 'tile.png';
-Drawing.TILE_SIZE = 60;
+Drawing.TILE_SIZE = 100;
 
 /**
  * Clears the canvas.
@@ -48,17 +50,18 @@ Drawing.prototype.clear = function() {
  *   2 * PI.
  * @param {number} turretAngle The angle of the turret from 0 to 2 * PI.
  * @param {string} name The name of the player associated with this tank.
+ * @param {string} message
  * @param {number} health The current health of the tank.
  */
 Drawing.prototype.drawTank = function(isSelf, coords, orientation,
                                       turretAngle, name, health,
-                                      hasShield) {
+                                      hasShield, message) {
   this.context.save();
   this.context.translate(coords[0], coords[1]);
   this.context.textAlign = 'center';
   this.context.font = Drawing.NAME_FONT;
   this.context.fillStyle = Drawing.NAME_COLOR;
-  this.context.fillText(name, 0, -50);
+  this.context.fillText(name, 0, 50);
   this.context.restore();
 
   this.context.save();
@@ -106,7 +109,21 @@ Drawing.prototype.drawTank = function(isSelf, coords, orientation,
     this.context.drawImage(shield, -shield.width / 2, -shield.height / 2);
     this.context.restore();
   }
+
 };
+
+/**
+ * Draws a message.
+ */
+Drawing.prototype.drawMessage = function(coords, orientation) {
+  this.context.save();
+  this.context.translate(coords[0], coords[1]);
+  this.context.textAlign = 'center';
+  this.context.font = Drawing.MESSAGE_FONT;
+  this.context.fillStyle = Drawing.MESSAGE_COLOR;
+  this.context.fillText(message, 0, -70);
+  this.context.restore();
+}
 
 /**
  * Draws a bullet.

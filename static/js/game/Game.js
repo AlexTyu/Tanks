@@ -1,21 +1,4 @@
-/**
- * Class encapsulating the client side of the game, handles drawing and
- * updates.
- * @author Alvin Lin (alvin.lin.dev@gmail.com)
- */
 
-/**
- * Creates a game on the client side to manage and render the players,
- * projectiles, and powerups.
- * @constructor
- * @param {Socket} socket The socket connected to the server.
- * @param {Leaderboard} leaderboard The Leaderboard object to update.
- * @param {Drawing} drawing The Drawing object that will render the game.
- * @param {ViewPort} viewPort The ViewPort object that will manage the
- *   player's view of the entities.
- * @param {Environment} environment The Environment object to draw the
- *   game background.
- */
 function Game(socket, leaderboard, drawing, viewPort, environment) {
   this.socket = socket;
 
