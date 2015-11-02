@@ -1,0 +1,90 @@
+{% extends 'layout.html' %}
+
+{% block head %}
+  <script src="/socket.io/socket.io.js">
+  </script>
+{% endblock %}
+
+{% block body %}
+  <div id='name-prompt-overlay'>
+    <div id='name-prompt-container'>
+      <form id='name-form'>
+        <div class='input-group'>
+          <input type='text'
+                 class='form-control'
+                 id='name-input'
+                 placeholder='Enter nickname'
+                 autocomplete='off' />
+          <span class='input-group-addon'
+                id='name-submit'>
+            Play
+          </span>
+        </div>
+      </form>
+    </div>
+  </div>
+
+
+
+  <div id='container'>
+    <div class='field'>
+      <canvas id='canvas'>
+      </canvas>
+    </div>
+
+
+        <div id='leaderboard-container'>
+
+            <h3>
+              Leaderboard:
+            </h3>
+
+            <ul id='leaderboard'>
+            </ul>
+
+        </div>
+
+
+        <div id="chat-window">
+          <ul id='chat-display'>
+          </ul>
+          <input id='chat-input' type='text'
+                 placeholder='Press Enter to send' name='chat' />
+        </div>
+
+
+
+    <div class='howto'>
+      <div>
+        <img src='/static/img/favicon.png' />
+        Your tank
+      </div>
+      <div>
+        <img src='/static/img/healthpack_powerup.png' />
+        Health pack
+      </div>
+      <div>
+        <img src='/static/img/rapidfire_powerup.png' />
+        Rapid fire powerup
+      </div>
+      <div>
+        <img src='/static/img/shield_powerup.png' />
+        Shield powerup
+      </div>
+      <div>
+        <img src='/static/img/shotgun_powerup.png' />
+        Shotgun powerup
+      </div>
+      <div>
+        <img src='/static/img/speedboost_powerup.png' />
+        Speed boost
+      </div>
+    </div>
+
+  </div>
+{% endblock %}
+
+{% block scripts %}
+  <script src='/static/dist/minified.js'>
+  </script>
+{% endblock %}
